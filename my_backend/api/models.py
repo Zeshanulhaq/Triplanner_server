@@ -18,6 +18,12 @@ class User(models.Model):
 
 
 
+class Dest(models.Model):
+    Uploadfile=models.ImageField()
+    Title=models.CharField(max_length=100,default='')
+    Description=models.CharField(max_length=5000,default='')
 
+ 
+    
 
     

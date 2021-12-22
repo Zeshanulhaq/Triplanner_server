@@ -1,10 +1,11 @@
 from django.contrib import admin
-from .models import User
+from .models import User,Dest
 # Register your models here.
 
 @admin.register(User)
+@admin.register(Dest)
 class UserAdmin(admin.ModelAdmin):
-    list_display=['id','fname','lname','uemail','upassword','urpassword']
+    List_display=['id','fname','lname','uemail','upassword','urpassword']
 
 
 

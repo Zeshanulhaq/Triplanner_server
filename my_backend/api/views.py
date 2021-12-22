@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from .models import User
-from .serializers import UserSerializer
+from .models import User,Dest
+from .serializers import UserSerializer,DestSerializer
 from rest_framework.generics import CreateAPIView,ListAPIView
 
 from rest_framework import viewsets
 from django.http import HttpResponse
-from .serializers import DestSerializer
-from .models import Dest
+# from .serializers import DestSerializer
+# from .models import Dest
 # Create your views here.
 
 #For User
@@ -19,8 +19,8 @@ class UserList(ListAPIView):
 
 
 class DestViewSet(viewsets.ModelViewSet):
-    queryset = Dest.objects.all()
-    serializer_class = DestSerializer
+    # queryset = Dest.objects.all()
+    # serializer_class = DestSerializer
 
     def post(self, request, *args, **kwargs):
         cover = request.data['cover']
