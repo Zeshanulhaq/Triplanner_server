@@ -12,7 +12,7 @@ class UserSerializer(serializers.ModelSerializer):
 class DestSerializer(serializers.ModelSerializer):
     class Meta:
         model=Dest
-        fields=['id', 'uploadfile', 'Title', 'Description']
+        fields='__all__'
         
 
         
