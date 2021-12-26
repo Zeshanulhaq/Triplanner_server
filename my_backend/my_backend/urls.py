@@ -1,13 +1,20 @@
-
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from api import views
-from django.conf.urls.static import static
+from rest_framework.routers import DefaultRouter
+
+router=DefaultRouter()
+router.register('userapi', views.UserApi)
+router.register('Pakgapi', views.PakgApi)
+router.register('bookingapi', views.BookingApi)
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/',views.UserCreated.as_view()),
-    path('api1/',views.UserList.as_view()),
-   
+    # path('api2/',views.ComplaintCreated.as_view()),
+    # path('api3/',views.ComplaintList.as_view()),
+    # path('api4/',views.OfficerList.as_view()),
+    path('',include(router.urls)),
     
 ]
